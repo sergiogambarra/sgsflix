@@ -30,7 +30,9 @@ function CadastroCategoria() {
 
   useEffect(() => {
     console.log('alo alo');
-    const URL = 'http://localhost:3333/categorias/';
+    const URL = window.location.hostname.includes('localhost')
+      ? 'http://localhost:3333/categorias/'
+      : 'https://devsgsflix.herokuapp.com/categorias/';
 
     fetch(URL)
       .then(async (respostaDoServidor) => {
